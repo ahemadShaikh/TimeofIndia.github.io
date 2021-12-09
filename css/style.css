@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap');
+:root{
+    --dotted-bg: #1a1c1c;
+    --bg-primary-dark: #1A1C1C;
+    --text-primary-light: #FBFCFC;
+    --font-family-primary: 'Baloo Bhaijaan 2', cursive;
+    --text-day: #5e6161;
+    --text-date: rgb(201, 195, 195);
+    --text-timer: #ffffff;
+    --clock-bg: linear-gradient(to bottom,#151616,#333636);
+    --clock-shadow: rgba(206, 206, 224, 0.25) 0px 30px 60px -12px inset, rgba(165, 160, 160, 0.3) 0px 18px 36px -18px inset;
+    --clock-shadow2: 0 -15px 15px rgba(255,255,255,0.05), inset 0 -15px 15px rgba(255,255,255,0.05), 0 15px 15px rgba(0,0,0,0.3), inset 0 15px 15px rgba(0,0,0,0.3);
+    --bubble-bg: linear-gradient(#424444);
+    --bubble-shadow: rgba(110, 110, 134, 0.25) 0px 30px 60px -12px inset, rgba(189, 184, 184, 0.3) 0px 18px 36px -18px inset;
+}
+
+.lightMode{
+    --dotted-bg: #1a1c1c;
+    --bg-primary-dark: #ccd1d1;
+    --text-primary-light: #1A1C1C;
+    --font-family-primary: 'Baloo Bhaijaan 2', cursive;
+    --text-day: #3d3f3f;
+    --text-date: rgb(43, 32, 32);
+    --text-timer: #000;
+    --clock-bg: linear-gradient(45deg,#FDFEFE,#D0D3D4);
+    --clock-shadow: rgba(63, 63, 66, 0.25) 0px 30px 60px -12px inset, rgba(124, 103, 103, 0.3) 0px 18px 36px -18px inset;
+    --clock-shadow2: 0 -15px 15px rgba(255,255,255,0.05), inset 0 -15px 15px rgba(255,255,255,0.05), 0 15px 15px rgba(0,0,0,0.3), inset 0 15px 15px rgba(0,0,0,0.3);
+    --bubble-bg: linear-gradient(#424444);
+    --bubble-shadow: rgba(110, 110, 134, 0.25) 0px 30px 60px -12px inset, rgba(189, 184, 184, 0.3) 0px 18px 36px -18px inset;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body{
+    font-family: var(--font-family-primary);
+    background-color: var(--bg-primary-dark);
+    color: var(--text-primary-light);
+}
+
+
+#worldClockBody{
+    height: 100vh;
+    overflow: hidden;
+    padding: 2rem;
+    position: relative;
+}
+
+/* background animation start */
+
+#worldClockBody::after{
+    position: absolute;
+    content: '';
+    width: 83px;
+    height: 83px;
+    background: var(--bubble-bg);
+    box-shadow: var(--bubble-shadow);
+    border-radius: 50%;
+    top: -20%;
+    left: 3%;
+    animation: First 10s ease infinite;
+}
+#worldClockBody::before{
+    position: absolute;
+    content: '';
+    width: 60px;
+    height: 60px;
+    top: -20%;
+    left: 30%;
+    background: var(--bubble-bg);
+    box-shadow: var(--bubble-shadow);
+    border-radius:50%;
+    animation: Second 12s ease 1s infinite;
+}
+
+#worldClockTitle h1::before{
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    top: -70px;
+    left: 60%;
+    background: var(--bubble-bg);
+    box-shadow: var(--bubble-shadow);
+    border-radius:50%;
+    animation: Third 12s ease 3s  infinite;
+}
+#worldClockTitle h1::after{
+    position: absolute;
+    content: '';
+    width: 40px;
+    height: 40px;
+    top: -80px;
+    left: 86%;
+    background: var(--bubble-bg);
+    box-shadow: var(--bubble-shadow);
+    border-radius:50%;
+    animation: Fourth 10s ease 2s infinite;
+}
+
+@keyframes First {
+    0%{
+        top: -20%;
+    }
+    100%{
+        top: 145%;
+    }
+}
+@keyframes Second {
+    0%{
+        top: -20%;
+    }
+    100%{
+        top: 145%;
+    }
+}
+@keyframes Third {
+    100%{
+        top: 1210%;
+    }
+}
+@keyframes Fourth {
+    100%{
+        top: 1210%;
+    }
+}
+
+@media screen and (min-width: 1299px) and (max-width: 1398px){
+    @keyframes First {
+        0%{
+            top: -20%;
+        }
+        100%{
+            top: 160%;
+        }
+    }
+    @keyframes Second {
+        0%{
+            top: -20%;
+        }
+        100%{
+            top: 160%;
+        }
+    }
+    @keyframes Third {
+        100%{
+            top: 1290%;
+        }
+    }
+    @keyframes Fourth {
+        100%{
+            top: 1250%;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1399px){
+    @keyframes First {
+        0%{
+            top: -20%;
+        }
+        100%{
+            top: 160%;
+        }
+    }
+    @keyframes Second {
+        0%{
+            top: -20%;
+        }
+        100%{
+            top: 160%;
+        }
+    }
+    @keyframes Third {
+        100%{
+            top: 1290%;
+        }
+    }
+    @keyframes Fourth {
+        100%{
+            top: 1250%;
+        }
+    }
+}
+
+/* background animation ends here */
+
+/* header title start */
+
+#worldClockTitle h1{
+    font-size: 2.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+/* header title ends */
+
+/* clock main rounded body start */
+
+#roundClock{
+    padding-top: 1.7rem;
+}
+
+#roundClock .clockBody{
+    /* background-color: #323535; */
+    padding: 2.5rem;
+    background: var(--clock-bg);
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    margin: 0 auto;
+    /* box-shadow: var(--clock-shadow2); */
+    box-shadow: var(--clock-shadow);
+    position: relative;
+    z-index: 20;
+}
+
+
+
+/* clock main rounded body ends */
+
+/* clocks inner Data start */
+
+.innerData{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.innerData .day{
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-day);
+}
+
+.innerData .currentDate{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-date);
+}
+
+.innerData .realtimeCounter{
+    font-family: 'Balsamiq Sans', cursive;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--text-timer);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.switchMode{
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.switchMode .sun{
+    color: var(--text-primary-light);
+    font-size: 1.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+#dotBtwnTimer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 35%;
+    width: 1rem;
+    margin-top: -0.3rem;
+}
+
+#dotBtwnTimer .first, #dotBtwnTimer .second{
+    width: 6px;
+    height: 6px;
+    background: var(--dotted-bg);
+    border-radius: 50%;
+    position: relative;
+}
+
+#dotBtwnTimer .second{
+    margin-top: 0.7rem;
+}
+
+.switchMode .moon{
+    color: var(--bg-primary-dark);
+    font-size: 1.8rem;
+    font-weight: 700;
+    display: none;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
+/* clocks inner Data ends */
+
